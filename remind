@@ -43,8 +43,7 @@ from quantiphy import Quantity, UnitConversion, QuantiPhyError
 from time import sleep
 import arrow
 import os
-from pydub import AudioSegment
-from pydub.playback import play
+import simpleaudio as sa
 
 # Constants {{{1
 notification_urgency = 'normal'  # chose from: critical, normal, low
@@ -156,8 +155,10 @@ try:
     # raise the notification
     notify(message, urgency=notification_urgency)
     # play notification sound
-    song = AudioSegment.from_wav("/usr/lib/notifications/airplane_chime.wav")
-    play(song)
+    filename = '/usr/lib/notifications/airplane_chime.wav'
+    wave_obj = sa.WaveObject.from_wave_file(filename)
+    play_obj = wave_obj.play()
+    play_obj.wait_done()  # Wait until sound has finished playing
 
 except KeyboardInterrupt:
     display('killed')
