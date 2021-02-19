@@ -1,6 +1,6 @@
 Remind - Schedule Notification Reminders
 ========================================
-*patched by Connor Rhodes to send audio notifications using pydub.*
+*patched by Connor Rhodes to send audio notifications using simpleaudio.*
 
 .. image:: https://img.shields.io/pypi/v/schedule-reminder.svg
     :target: https://pypi.python.org/pypi/schedule-reminder
