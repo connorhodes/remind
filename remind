@@ -43,9 +43,11 @@ from quantiphy import Quantity, UnitConversion, QuantiPhyError
 from time import sleep
 import arrow
 import os
+from pydub import AudioSegment
+from pydub.playback import play
 
 # Constants {{{1
-notification_urgency = 'critical'  # chose from: critical, normal, low
+notification_urgency = 'normal'  # chose from: critical, normal, low
 default_message = "It's time!"
 __version__ = '1.0.0'
 __released__ = '2020-07-19'
