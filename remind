@@ -155,6 +155,9 @@ try:
 
     # raise the notification
     notify(message, urgency=notification_urgency)
+    # play notification sound
+    song = AudioSegment.from_wav("/usr/lib/notifications/airplane_chime.wav")
+    play(song)
 
 except KeyboardInterrupt:
     display('killed')
